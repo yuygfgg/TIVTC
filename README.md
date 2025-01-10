@@ -20,7 +20,7 @@ Since December 27th 2020 project can be built under Linux and macOS (x86/x64 onl
 
 ## Build Instructions
 
-Note: ENABLE_INTEL_SIMD does nothing, this plugin cannot be built on non-x86 architectures
+Note: ENABLE_INTEL_SIMD does nothing, this plugin builds on x86 and arm64 platforms only.
 
 ### Windows Visual Studio MSVC
 
