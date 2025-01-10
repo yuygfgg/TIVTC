@@ -23,7 +23,11 @@
 
 #include "PlanarFrame.h"
 #include <avs/cpuid.h>
-#include <emmintrin.h>
+#ifdef __ARM_NEON__
+#include "../include/sse2neon.h"
+#else
+#include "emmintrin.h"
+#endif
 #include <stdint.h>
 
 // 8 bits only!!!

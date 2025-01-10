@@ -24,8 +24,12 @@
 
 #include <stdint.h>
 #include "internal.h"
+#ifdef __ARM_NEON__
+#include "../include/sse2neon.h"
+#else
 #include <xmmintrin.h>
 #include <emmintrin.h>
+#endif
 #include <algorithm>
 
 template<int bits_per_pixel>

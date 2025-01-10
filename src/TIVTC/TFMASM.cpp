@@ -24,7 +24,11 @@
 */
 
 #include "TFMasm.h"
+#ifdef __ARM_NEON__
+#include "../include/sse2neon.h"
+#else
 #include "emmintrin.h"
+#endif
 
 void checkSceneChangePlanar_1_SSE2(const uint8_t *prvp, const uint8_t *srcp,
   int height, int width, int prv_pitch, int src_pitch, uint64_t &diffp)

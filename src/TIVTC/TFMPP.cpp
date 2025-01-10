@@ -26,8 +26,12 @@
 #include "TFMPP.h"
 #include "internal.h"
 #include "TCommonASM.h"
+#ifdef __ARM_NEON__
+#include "../include/sse2neon.h"
+#else
 #include "emmintrin.h"
-#include "smmintrin.h"
+#include "smmintrin.h" // SSE4
+#endif
 #include "info.h"
 
 

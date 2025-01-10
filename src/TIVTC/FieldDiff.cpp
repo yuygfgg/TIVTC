@@ -23,8 +23,12 @@
 **   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 #include "FieldDiff.h"
-#include <emmintrin.h>
-#include <smmintrin.h>
+#ifdef __ARM_NEON__
+#include "../include/sse2neon.h"
+#else
+#include "emmintrin.h"
+#include "smmintrin.h" // SSE4
+#endif
 #include <inttypes.h>
 #include "info.h"
 

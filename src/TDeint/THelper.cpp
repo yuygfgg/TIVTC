@@ -25,7 +25,11 @@
 
 #include "THelper.h"
 #include "TCommonASM.h"
+#ifdef __ARM_NEON__
+#include "../include/sse2neon.h"
+#else
 #include "emmintrin.h"
+#endif
 #include <inttypes.h>
 #include <algorithm>
 

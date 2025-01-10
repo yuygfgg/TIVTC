@@ -25,7 +25,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <xmmintrin.h>
+#ifdef __ARM_NEON__
+#include "../include/sse2neon.h"
+#else
+#include "xmmintrin.h"
+#endif
 #include "Font.h"
 #include "../common/internal.h"
 #ifndef _WIN32

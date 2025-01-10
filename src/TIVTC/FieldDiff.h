@@ -26,8 +26,11 @@
 #include <stdio.h>
 #include "internal.h"
 #include "TFM.h"
+#ifdef __ARM_NEON__
+#include "../include/sse2neon.h"
+#else
 #include "emmintrin.h"
-
+#endif
 #ifdef VERSION
 #undef VERSION
 #endif

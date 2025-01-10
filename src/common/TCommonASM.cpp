@@ -20,8 +20,12 @@
 */
 
 #include "TCommonASM.h"
+#ifdef __ARM_NEON__
+#include "../include/sse2neon.h"
+#else
 #include "emmintrin.h"
 #include "smmintrin.h" // SSE4
+#endif
 #include <algorithm>
 
 void absDiff_SSE2(const uint8_t *srcp1, const uint8_t *srcp2,

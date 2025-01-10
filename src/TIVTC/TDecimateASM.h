@@ -26,8 +26,12 @@
 #ifndef __TDECIMATEASM_H__
 #define __TDECIMATEASM_H__
 
+#ifdef __ARM_NEON__
+#include "../include/sse2neon.h"
+#else
 #include <xmmintrin.h>
 #include <emmintrin.h>
+#endif
 #include "internal.h"
 
 void HorizontalBlurSSE2_YUY2_R_luma(const uint8_t* srcp, uint8_t* dstp, int src_pitch, int dst_pitch, int width, int height);

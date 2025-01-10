@@ -277,3 +277,9 @@ __pycache__/
 
 # Cake -
 # tools/
+
+
+src/.cache/*
+.DS_Store
+*/.DS_Store
+.vscode/settings.json

@@ -26,7 +26,12 @@
 #include "TDeinterlace.h"
 #include "TCommonASM.h"
 #include "TDeintASM.h"
+
+#ifdef __ARM_NEON__
+#include "../include/sse2neon.h"
+#else
 #include "emmintrin.h"
+#endif
 
 // HBD ready inside
 void TDeinterlace::absDiff(PVideoFrame &src1, PVideoFrame &src2, PVideoFrame &dst, int pos)

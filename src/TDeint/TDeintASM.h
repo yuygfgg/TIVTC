@@ -26,8 +26,12 @@
 #ifndef __TDEINTASM_H__
 #define __TDEINTASM_H__
 
-#include <xmmintrin.h>
-#include <emmintrin.h>
+#ifdef __ARM_NEON__
+#include "../include/sse2neon.h"
+#else
+#include "xmmintrin.h"
+#include "emmintrin.h"
+#endif
 #include "internal.h"
 
 
